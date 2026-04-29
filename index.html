@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Club Condoms™ — Protection for Your Sticks!</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#267326;
+  --green-mid:#2e8b2e;
+  --green-light:#4aad4a;
+  --yellow:#f5d000;
+  --yellow-warm:#e8c400;
+  --red:#cc1111;
+  --blue:#1565c0;
+  --cream:#fffef5;
+  --tan:#f2e8cc;
+  --dark:#1a1a1a;
+  --white:#ffffff;
+  --shadow:rgba(0,0,0,0.18);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes wobble{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* NAV */
+nav{
+  background:var(--green);
+  display:flex;justify-content:space-between;align-items:center;
+  padding:0.75rem 2rem;position:sticky;top:0;z-index:200;
+  box-shadow:0 4px 16px rgba(0,0,0,0.35);
+  border-bottom:4px solid var(--yellow);
+}
+.nav-logo{
+  font-family:'Fredoka One',sans-serif;font-size:1.5rem;
+  color:var(--yellow);text-decoration:none;
+  text-shadow:2px 2px 0 #1a5a1a;
+  display:inline-block;animation:wobble 3s ease-in-out infinite;
+}
+nav ul{list-style:none;display:flex;gap:0;flex-wrap:wrap}
+nav ul a{
+  color:var(--white);text-decoration:none;font-size:0.78rem;font-weight:800;
+  letter-spacing:0.06em;text-transform:uppercase;padding:0.45rem 0.9rem;
+  border-bottom:3px solid transparent;transition:all 0.2s;display:block;
+}
+nav ul a:hover{color:var(--yellow);border-bottom-color:var(--yellow)}
+.nav-order{background:var(--red);border-radius:4px;margin-left:0.5rem}
+.nav-order:hover{background:#a50000!important;border-bottom-color:transparent!important}
+
+/* TICKER */
+.ticker{
+  background:var(--yellow);color:var(--dark);font-weight:900;font-size:0.82rem;
+  letter-spacing:0.08em;text-transform:uppercase;padding:0.45rem 0;
+  overflow:hidden;white-space:nowrap;border-bottom:3px solid var(--yellow-warm);
+}
+.ticker-inner{display:inline-block;animation:marquee 28s linear infinite}
+.ticker-inner span{margin:0 2.5rem}
+.sep{color:var(--green);margin:0 0.5rem}
+
+/* HERO */
+.hero{
+  background:linear-gradient(145deg,#c8e6c9 0%,#a5d6a7 50%,#81c784 100%);
+  padding:3.5rem 2rem 3rem;
+  display:grid;grid-template-columns:1.15fr 1fr;gap:3rem;
+  align-items:center;min-height:560px;
+  position:relative;overflow:hidden;border-bottom:6px solid var(--green);
+}
+.hero::after{
+  content:'⛳';position:absolute;font-size:14rem;opacity:0.05;
+  bottom:-3rem;right:4%;pointer-events:none;
+}
+.hero-text{position:relative;z-index:2;animation:fadeUp 0.6s ease both}
+.hero-badge{
+  display:inline-block;background:var(--red);color:var(--white);
+  font-size:0.72rem;font-weight:900;letter-spacing:0.14em;text-transform:uppercase;
+  padding:0.35rem 0.9rem;border-radius:3px;margin-bottom:1rem;
+  box-shadow:3px 3px 0 #7a0000;animation:pulse 2s ease-in-out infinite;
+}
+.hero h1{
+  font-family:'Fredoka One',sans-serif;font-size:clamp(3rem,7vw,5rem);
+  line-height:0.98;color:var(--green);
+  text-shadow:3px 3px 0 rgba(0,80,0,0.2);margin-bottom:0.6rem;
+}
+.hero h1 .gold{color:var(--yellow-warm);-webkit-text-stroke:1.5px #b89000}
+.hero-sub{font-size:1.3rem;font-weight:800;color:var(--dark);margin-bottom:1rem}
+.hero-tagline{
+  font-size:1rem;font-weight:600;color:#2d5a2d;
+  margin-bottom:2rem;line-height:1.65;max-width:440px;
+}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-red{
+  background:var(--red);color:var(--white);border:none;border-radius:5px;
+  padding:0.85rem 1.8rem;font-family:'Nunito',sans-serif;font-size:0.88rem;font-weight:900;
+  letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;text-decoration:none;
+  display:inline-block;box-shadow:4px 4px 0 #7a0000;transition:transform 0.12s,box-shadow 0.12s;
+}
+.btn-red:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #7a0000}
+.btn-green{
+  background:var(--green);color:var(--white);border:none;border-radius:5px;
+  padding:0.85rem 1.8rem;font-family:'Nunito',sans-serif;font-size:0.88rem;font-weight:900;
+  letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;text-decoration:none;
+  display:inline-block;box-shadow:4px 4px 0 #1a4a1a;transition:transform 0.12s,box-shadow 0.12s;
+}
+.btn-green:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 #1a4a1a}
+
+.hero-img-wrap{position:relative;z-index:2;animation:fadeUp 0.7s 0.15s ease both}
+.hero-img-wrap img{
+  width:100%;border-radius:10px;
+  box-shadow:0 12px 40px rgba(0,0,0,0.25);border:4px solid var(--white);display:block;
+}
+.hero-sticker{
+  position:absolute;top:-16px;right:-16px;
+  background:var(--yellow);color:var(--dark);
+  font-family:'Fredoka One',sans-serif;font-size:0.82rem;
+  width:90px;height:90px;border-radius:50%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;line-height:1.25;
+  box-shadow:3px 3px 0 var(--yellow-warm),6px 6px 0 rgba(0,0,0,0.15);
+  border:3px solid var(--green);animation:wobble 2.5s ease-in-out infinite;z-index:5;
+}
+
+/* SECTION SHARED */
+.section-title{
+  font-family:'Fredoka One',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);
+  color:var(--green);text-align:center;margin-bottom:0.4rem;
+}
+.section-sub{
+  text-align:center;color:#555;font-size:0.95rem;font-weight:700;
+  margin-bottom:2.5rem;letter-spacing:0.03em;font-style:italic;
+}
+
+/* WHY */
+.why{background:var(--white);padding:3.5rem 2rem;border-bottom:4px solid var(--tan)}
+.features-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:1.5rem;max-width:1100px;margin:0 auto;
+}
+.feature-card{
+  background:var(--cream);border:3px solid var(--tan);border-radius:10px;
+  padding:1.5rem;text-align:center;
+  transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s;
+}
+.feature-card:hover{transform:translateY(-5px);box-shadow:0 8px 24px var(--shadow);border-color:var(--green-light)}
+.feature-icon{font-size:2.2rem;margin-bottom:0.8rem;display:block}
+.feature-title{font-family:'Fredoka One',sans-serif;font-size:1.05rem;color:var(--green);margin-bottom:0.4rem}
+.feature-desc{font-size:0.86rem;font-weight:600;color:#444;line-height:1.6}
+.feature-wink{font-size:0.76rem;font-style:italic;color:#999;margin-top:0.5rem}
+
+/* PRODUCTS */
+.products{background:var(--tan);padding:3.5rem 2rem;border-bottom:4px solid #d4c4a0}
+.products-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.8rem;max-width:1100px;margin:0 auto;
+}
+.product-card{
+  background:var(--white);border-radius:12px;overflow:hidden;
+  box-shadow:0 4px 16px var(--shadow);border:3px solid transparent;
+  transition:transform 0.2s,box-shadow 0.2s,border-color 0.2s;position:relative;
+}
+.product-card:hover{transform:translateY(-6px);box-shadow:0 12px 32px rgba(0,0,0,0.22);border-color:var(--green)}
+.p-badge{
+  position:absolute;top:12px;left:12px;z-index:3;
+  background:var(--red);color:var(--white);font-size:0.65rem;font-weight:900;
+  letter-spacing:0.1em;text-transform:uppercase;padding:0.25rem 0.6rem;
+  border-radius:3px;box-shadow:2px 2px 0 #7a0000;
+}
+.p-badge.new{background:var(--blue)}
+.p-badge.free{background:var(--green)}
+.product-img-box{
+  height:190px;background:linear-gradient(135deg,#e8f4e8,#c8e6c9);
+  display:flex;align-items:center;justify-content:center;font-size:4.5rem;
+}
+.product-body{padding:1.3rem}
+.product-name{font-family:'Fredoka One',sans-serif;font-size:1.15rem;color:var(--green);margin-bottom:0.25rem}
+.product-hook{font-size:0.82rem;font-weight:800;color:var(--red);margin-bottom:0.6rem;font-style:italic}
+.product-desc{font-size:0.84rem;font-weight:600;color:#444;line-height:1.55;margin-bottom:1rem}
+.product-price{font-family:'Fredoka One',sans-serif;font-size:1.5rem;color:var(--dark);margin-bottom:0.8rem}
+.product-price sup{font-size:0.9rem;vertical-align:super}
+.btn-cart{
+  width:100%;background:var(--red);color:var(--white);border:none;border-radius:5px;
+  padding:0.7rem;font-family:'Nunito',sans-serif;font-size:0.84rem;font-weight:900;
+  letter-spacing:0.07em;text-transform:uppercase;cursor:pointer;
+  box-shadow:3px 3px 0 #7a0000;transition:transform 0.12s,box-shadow 0.12s;
+}
+.btn-cart:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 #7a0000}
+
+/* SENSATION CHART */
+.sensation{background:var(--white);padding:3.5rem 2rem;border-bottom:4px solid var(--tan)}
+.chart-wrap{max-width:720px;margin:2rem auto 0;border-radius:10px;overflow:hidden;box-shadow:0 4px 20px var(--shadow)}
+.chart-table{width:100%;border-collapse:collapse;font-size:0.87rem}
+.chart-table th{
+  background:var(--green);color:var(--white);padding:0.75rem 1rem;
+  text-align:left;font-weight:800;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;
+}
+.chart-table td{padding:0.7rem 1rem;border-bottom:2px solid var(--tan);font-weight:600;vertical-align:middle}
+.chart-table tr:nth-child(even) td{background:#f8f8f0}
+.chart-table tr:last-child td{border-bottom:none}
+
+/* REVIEWS */
+.reviews{background:var(--tan);padding:3.5rem 2rem;border-bottom:4px solid #d4c4a0}
+.reviews-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1.5rem;max-width:1100px;margin:0 auto;
+}
+.review-card{
+  background:var(--white);border-radius:10px;padding:1.5rem;
+  border:3px solid var(--tan);box-shadow:0 3px 12px var(--shadow);position:relative;
+}
+.review-card::before{
+  content:'"';font-family:'Fredoka One',sans-serif;font-size:5rem;
+  color:var(--green-light);opacity:0.12;position:absolute;top:-8px;left:10px;line-height:1;
+}
+.stars{color:var(--yellow-warm);font-size:1rem;letter-spacing:2px;margin-bottom:0.6rem}
+.review-text{font-size:0.88rem;font-weight:700;color:var(--dark);line-height:1.65;margin-bottom:0.7rem;font-style:italic}
+.reviewer{font-size:0.77rem;font-weight:800;color:var(--green);text-transform:uppercase;letter-spacing:0.05em}
+.review-product-label{font-size:0.72rem;font-weight:600;color:#999;margin-top:0.2rem}
+
+/* BULK BANNER */
+.bulk{
+  background:var(--green);padding:3rem 2rem;
+  display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;
+  border-top:6px solid var(--yellow);border-bottom:6px solid var(--yellow);
+}
+.bulk-text h2{
+  font-family:'Fredoka One',sans-serif;font-size:clamp(2rem,5vw,3rem);
+  color:var(--yellow);text-shadow:3px 3px 0 rgba(0,0,0,0.3);margin-bottom:0.8rem;
+}
+.bulk-text p{color:var(--white);font-weight:700;font-size:0.97rem;line-height:1.65;margin-bottom:1.2rem}
+.bulk-text ul{list-style:none;margin-bottom:1.8rem;display:flex;flex-direction:column;gap:0.4rem}
+.bulk-text ul li{color:var(--white);font-weight:700;font-size:0.9rem;display:flex;align-items:flex-start;gap:0.5rem}
+.bulk-text ul li::before{content:'✅';flex-shrink:0}
+.bulk-img-box{
+  background:#1a5a1a;border-radius:10px;overflow:hidden;
+  border:4px solid var(--yellow);box-shadow:0 8px 24px rgba(0,0,0,0.3);
+  display:flex;align-items:center;justify-content:center;min-height:200px;font-size:6rem;
+}
+
+/* FAQ */
+.faq{background:var(--cream);padding:3.5rem 2rem;border-bottom:4px solid var(--tan)}
+.faq-list{max-width:780px;margin:2rem auto 0;display:flex;flex-direction:column;gap:1rem}
+.faq-item{background:var(--white);border:3px solid var(--tan);border-radius:8px;overflow:hidden}
+.faq-q{
+  padding:1rem 1.3rem;font-weight:800;font-size:0.95rem;color:var(--green);
+  cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+  transition:background 0.2s;gap:1rem;
+}
+.faq-q:hover{background:#f0faf0}
+.faq-q .arr{font-size:0.8rem;transition:transform 0.25s;color:var(--green);flex-shrink:0}
+.faq-a{
+  padding:0 1.3rem;max-height:0;overflow:hidden;
+  transition:max-height 0.35s ease,padding 0.25s ease;
+  font-size:0.88rem;font-weight:600;color:#444;line-height:1.7;
+}
+.faq-item.open .faq-a{max-height:300px;padding:0 1.3rem 1rem}
+.faq-item.open .arr{transform:rotate(90deg)}
+
+/* FOOTER */
+footer{
+  background:var(--dark);color:var(--white);padding:2.5rem 2rem;
+  display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2rem;
+}
+.footer-brand{font-family:'Fredoka One',sans-serif;font-size:1.4rem;color:var(--yellow);margin-bottom:0.5rem}
+.footer-tag{font-size:0.82rem;color:#aaa;font-weight:600;line-height:1.65}
+.footer-col h4{font-size:0.74rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--yellow);margin-bottom:0.8rem;font-weight:800}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.4rem}
+.footer-col ul a{color:#bbb;text-decoration:none;font-size:0.82rem;font-weight:600;transition:color 0.2s}
+.footer-col ul a:hover{color:var(--yellow)}
+.social-row{display:flex;gap:0.5rem;margin-top:1rem}
+.soc{
+  background:#2a2a2a;color:var(--white);width:36px;height:36px;border-radius:6px;
+  display:flex;align-items:center;justify-content:center;text-decoration:none;
+  font-size:0.9rem;font-weight:800;transition:background 0.2s,transform 0.15s;
+}
+.soc:hover{background:var(--green);transform:translateY(-2px)}
+.footer-bottom{
+  background:#111;text-align:center;padding:1rem 2rem;
+  font-size:0.74rem;color:#666;font-weight:600;border-top:1px solid #2a2a2a;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav ul{display:none}
+  .hero{grid-template-columns:1fr;padding:2rem 1.2rem}
+  .hero-img-wrap{order:-1}
+  .hero-sticker{width:72px;height:72px;font-size:0.7rem}
+  .bulk{grid-template-columns:1fr}
+  footer{grid-template-columns:1fr;gap:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">🏌️ Club Condoms™</a>
+  <ul>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#order" class="nav-order">Order Now</a></li>
+  </ul>
+</nav>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-inner">
+    <span>🏌️ Protection for Every Shaft<span class="sep"> • </span></span>
+    <span>Fits All Sizes — Even Your Big Bertha<span class="sep"> • </span></span>
+    <span>Ribbed for Maximum Sensitivity<span class="sep"> • </span></span>
+    <span>Slide It On Before You Hit It<span class="sep"> • </span></span>
+    <span>Never Go Bare on the Course Again<span class="sep"> • </span></span>
+    <span>Glow-in-the-Dark: Find Your Ball in Any Hole<span class="sep"> • </span></span>
+    <span>🏌️ Protection for Every Shaft<span class="sep"> • </span></span>
+    <span>Fits All Sizes — Even Your Big Bertha<span class="sep"> • </span></span>
+    <span>Ribbed for Maximum Sensitivity<span class="sep"> • </span></span>
+    <span>Slide It On Before You Hit It<span class="sep"> • </span></span>
+    <span>Never Go Bare on the Course Again<span class="sep"> • </span></span>
+    <span>Glow-in-the-Dark: Find Your Ball in Any Hole<span class="sep"> • </span></span>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-badge">🔴 Limited Hole Supply — Act Fast</div>
+    <h1>CLUB<br/><span class="gold">CONDOMS™</span></h1>
+    <p class="hero-sub">Protection for Your Sticks!</p>
+    <p class="hero-tagline">
+      Finally — a snug, ultra-sheer cover engineered to wrap around your shaft, 
+      protect your head, and make every stroke feel absolutely incredible. 
+      Long, stiff, or just warming up — we've got you covered. 
+      Because nobody should go in bare.
+    </p>
+    <div class="hero-actions">
+      <a href="#products" class="btn-red">Protect My Sticks 🏌️</a>
+      <a href="#why" class="btn-green">Why Club Condoms?</a>
+    </div>
+  </div>
+  <div class="hero-img-wrap">
+    <div class="hero-sticker">LIMITED<br/>EDITION<br/>✨ GLOW</div>
+    <img 
+      src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=700&q=80" 
+      alt="Full bag of golf clubs with Club Condoms protection"
+      onerror="this.outerHTML='<div style=\'height:340px;background:#d4edda;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:5rem;border:4px solid white\'>🏌️⛳🏆</div>'"
+    />
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="why" id="why">
+  <h2 class="section-title">Why Choose Club Condoms?</h2>
+  <p class="section-sub">Because going in raw is never the right move.</p>
+  <div class="features-grid">
+
+    <div class="feature-card">
+      <span class="feature-icon">💨</span>
+      <div class="feature-title">Aerodynamic Shaft Sleeve</div>
+      <div class="feature-desc">Our ultra-thin, form-fitting sheath minimizes drag across every shaft so you get maximum distance on every single thrust forward.</div>
+      <div class="feature-wink">(Minimize drag. Maximize distance.)</div>
+    </div>
+
+    <div class="feature-card">
+      <span class="feature-icon">〰️</span>
+      <div class="feature-title">Ribbed for Their Feedback</div>
+      <div class="feature-desc">Tactile ribbing transmits every vibration directly from the point of impact to your grip. You'll feel <em>everything</em>. Every. Single. Stroke.</div>
+      <div class="feature-wink">(Consistent, feel-good performance.)</div>
+    </div>
+
+    <div class="feature-card">
+      <span class="feature-icon">🌟</span>
+      <div class="feature-title">Glow-in-the-Dark Edition</div>
+      <div class="feature-desc">So you can find your hole even in low light. Some rounds go very, very late — and we fully support that lifestyle. No judgment. Just coverage.</div>
+      <div class="feature-wink">(Be seen. Always. Especially in the dark.)</div>
+    </div>
+
+    <div class="feature-card">
+      <span class="feature-icon">🫙</span>
+      <div class="feature-title">Ultra-Sheer. Barely There.</div>
+      <div class="feature-desc">So thin you'll barely know it's there — except for the full protection it offers against scratches, moisture, and regrettable contact with strangers' equipment.</div>
+      <div class="feature-wink">(Feels like nothing. Protects like everything.)</div>
+    </div>
+
+    <div class="feature-card">
+      <span class="feature-icon">📏</span>
+      <div class="feature-title">One Size Fits Most</div>
+      <div class="feature-desc">Engineered to stretch and conform to your specific dimensions. Irons, woods, hybrids — we don't judge what you're working with. We just make it fit.</div>
+      <div class="feature-wink">(Specialty 3-Pack for plus-sized situations.)</div>
+    </div>
+
+    <div class="feature-card">
+      <span class="feature-icon">🤝</span>
+      <div class="feature-title">Easy On. Easy Off.</div>
+      <div class="feature-desc">Individually wrapped for freshness. Slide it on before the first tee. Peel it off at the 19th hole. Discreetly. Like a professional. Like someone who comes prepared.</div>
+      <div class="feature-wink">(Ready to bag in under 10 seconds.)</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <h2 class="section-title">Our Products</h2>
+  <p class="section-sub">Something for every stick in your bag. Even the stubby ones.</p>
+  <div class="products-grid">
+
+    <div class="product-card">
+      <div class="p-badge">BESTSELLER</div>
+      <div class="product-img-box">🏌️</div>
+      <div class="product-body">
+        <div class="product-name">All-In-One Bag Protection</div>
+        <div class="product-hook">"Covers everything you've got, no questions asked."</div>
+        <div class="product-desc">24-pack of individually wrapped protectors for Drivers, Irons, Hybrids, and that weird club you got at a charity scramble. Full-bag coverage. No shaft left exposed.</div>
+        <div class="product-price"><sup>$</sup>20<sup>.95</sup></div>
+        <button class="btn-cart">Wrap My Whole Bag 🛒</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="p-badge new">NEW</div>
+      <div class="product-img-box">⚙️</div>
+      <div class="product-body">
+        <div class="product-name">Specialty 3-Pack</div>
+        <div class="product-hook">"For when standard just won't stretch far enough."</div>
+        <div class="product-desc">Custom-shaped for Wedges and Putters — clubs with unique head profiles that ordinary covers can't handle. Every member of your bag deserves proper protection, regardless of shape or girth.</div>
+        <div class="product-price"><sup>$</sup>3<sup>.95</sup></div>
+        <button class="btn-cart">Get Specialty Covered 🛒</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="p-badge" style="background:#9b59b6">HOT</div>
+      <div class="product-img-box">🌙</div>
+      <div class="product-body">
+        <div class="product-name">Putter Poncho</div>
+        <div class="product-hook">"A little extra coverage never hurt anyone."</div>
+        <div class="product-desc">Full-length shaft AND head protection in one sleek garment. Soft. Flexible. Goes all the way down. Limited Edition colors for players who enjoy showing off their equipment.</div>
+        <div class="product-price"><sup>$</sup>7<sup>.99</sup></div>
+        <button class="btn-cart">Poncho My Putter 🛒</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="p-badge new">NEW</div>
+      <div class="product-img-box">✨</div>
+      <div class="product-body">
+        <div class="product-name">Glow-in-the-Dark 14-Pack</div>
+        <div class="product-hook">"When you want to find your hole at 9pm."</div>
+        <div class="product-desc">Covers all 14 clubs in luminescent glow material. Perfect for twilight rounds, late scrambles, or proving to your playing partners that yours is the biggest glowing bag at the club.</div>
+        <div class="product-price"><sup>$</sup>24<sup>.95</sup></div>
+        <button class="btn-cart">Light Up My Bag 🛒</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="p-badge">BULK</div>
+      <div class="product-img-box">📦</div>
+      <div class="product-body">
+        <div class="product-name">Corrugated Shipping Box</div>
+        <div class="product-hook">"Discreet delivery for sensitive equipment."</div>
+        <div class="product-desc">Sometimes you just need a lot. Plain exterior. Nobody knows what's inside. Great for outfitting the whole foursome, the whole club, or for stockpiling ahead of a long season without shame.</div>
+        <div class="product-price">Call for Quote</div>
+        <button class="btn-cart">Order in Bulk 🛒</button>
+      </div>
+    </div>
+
+    <div class="product-card">
+      <div class="p-badge free">FREE</div>
+      <div class="product-img-box">📖</div>
+      <div class="product-body">
+        <div class="product-name">Product Catalog & Installation Guide</div>
+        <div class="product-hook">"For first-timers who need a little direction."</div>
+        <div class="product-desc">Never put one on before? No shame. Our illustrated step-by-step guide walks you through proper technique. Includes sizing tips, common mistakes, and a full Sensation Chart for reference.</div>
+        <div class="product-price">FREE with order</div>
+        <button class="btn-cart">Send Me the Guide 📬</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SENSATION CHART -->
+<section class="sensation" id="sensation">
+  <h2 class="section-title">Material & Sensation Chart</h2>
+  <p class="section-sub">Know exactly what you're in for before it goes on.</p>
+  <div class="chart-wrap">
+    <table class="chart-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>Material & Sensation</th>
+          <th>Best For</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>〰️ Vibration-Damping Polymer</td>
+          <td>Absorbs shock on impact. Smooth, muffled sensation throughout.</td>
+          <td>Irons, long hitters</td>
+        </tr>
+        <tr>
+          <td>🔘 Ribbed for Tactile Feedback</td>
+          <td>Every bump transmitted directly to your grip. You will feel everything.</td>
+          <td>Chipping, wedge play</td>
+        </tr>
+        <tr>
+          <td>💨 Ultra-Sheer Aerodynamics</td>
+          <td>So thin you barely know it's there. Maximum airflow. Minimal resistance.</td>
+          <td>Drivers, woods</td>
+        </tr>
+        <tr>
+          <td>🌀 Ribbed P&B Feedback</td>
+          <td>Peak & Bottom ribbing ensures full sensation at both extremes of the stroke.</td>
+          <td>Full swing, power shots</td>
+        </tr>
+        <tr>
+          <td>✨ Glow-in-the-Dark Film</td>
+          <td>Luminescent finish. Slightly warm to the touch. Visible from 40 yards.</td>
+          <td>Twilight rounds, showing off</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <h2 class="section-title">What Our Members Are Saying</h2>
+  <p class="section-sub">Thousands of satisfied strokes. The data doesn't lie.</p>
+  <div class="reviews-grid">
+
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <div class="review-text">"I used to go in completely bare. My buddies went bare too. We thought protection was for amateurs. Then I got one scratch on my 7-iron and I've never looked back. Club Condoms changed my entire relationship with my equipment."</div>
+      <div class="reviewer">— Randy H., Scottsdale AZ</div>
+      <div class="review-product-label">✅ Verified Purchase: All-In-One 24-Pack</div>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <div class="review-text">"My husband was skeptical. Said his clubs were 'too big' for standard coverage. We ordered the Specialty 3-Pack and honestly — they stretched beautifully. He's a daily user now. Our marriage has genuinely never been better."</div>
+      <div class="reviewer">— Karen M., Naples FL</div>
+      <div class="review-product-label">✅ Verified Purchase: Specialty 3-Pack</div>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">★★★★☆</div>
+      <div class="review-text">"Gave these as a gag gift at Secret Santa. By the 3rd hole on Boxing Day I had four other guys asking where to get them. Docking one star because the Installation Guide gave me too many new ideas and now I can't stop thinking about shaft protection."</div>
+      <div class="reviewer">— Dave S., Palm Beach FL</div>
+      <div class="review-product-label">✅ Verified Purchase: Glow 14-Pack</div>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <div class="review-text">"The glow-in-the-dark ones are a game changer. We were in a twilight scramble and my entire bag was glowing. The other team accused me of cheating. I was not cheating. I was simply well-protected and visible."</div>
+      <div class="reviewer">— Phil C., Augusta GA</div>
+      <div class="review-product-label">✅ Verified Purchase: Glow 14-Pack</div>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <div class="review-text">"Ordered the Putter Poncho for my dad as a joke. He called me three days later — dead serious — asking if it came in black. I don't know what's happening in that man's life but he has never looked happier on a green."</div>
+      <div class="reviewer">— Tyler B., Charlotte NC</div>
+      <div class="review-product-label">✅ Verified Purchase: Putter Poncho</div>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">★★★☆☆</div>
+      <div class="review-text">"Ordered for my bachelor party. The pro gave us a long look when we rolled up to the first tee with every single club covered. He didn't say a word. Not one word. Three stars because I really needed him to say something and he refused."</div>
+      <div class="reviewer">— Mike D., Tampa FL</div>
+      <div class="review-product-label">✅ Verified Purchase: Bulk Box</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BULK BANNER -->
+<section class="bulk" id="order">
+  <div class="bulk-text">
+    <h2>BULK PROTECTION PACK 📦</h2>
+    <p>For the golfer who refuses to leave a single shaft exposed. Individually wrapped and ready to bag — because you deserve complete coverage on every single round.</p>
+    <ul>
+      <li>Covers up to 14 clubs — drivers through putters</li>
+      <li>Fits standard, oversized, AND plus-sized heads</li>
+      <li>Individually wrapped for freshness and convenience</li>
+      <li>Discreet brown box — nobody needs to know what's inside</li>
+      <li>Perfect for bachelor parties, tournaments & charity scrambles</li>
+    </ul>
+    <a href="#" class="btn-red" style="font-size:1rem;padding:1rem 2rem">Order the Bulk Pack Now 🔴</a>
+  </div>
+  <div class="bulk-img-box">⛳🏌️📦</div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <h2 class="section-title">Frequently Asked Questions</h2>
+  <p class="section-sub">We get it. You have questions. We have answers. Most are appropriate.</p>
+  <div class="faq-list">
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Will it fit my Big Bertha? <span class="arr">▶</span>
+      </div>
+      <div class="faq-a">Yes. Our flexible, self-expanding polymer blend accommodates oversized heads without tearing, splitting, or making you feel embarrassed at the register. We've tested it on the biggest drivers on the market. Your Big Bertha is safe with us.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        How do I put one on for the first time? <span class="arr">▶</span>
+      </div>
+      <div class="faq-a">Open the individual wrapper, pinch the tip, and roll it smoothly down the shaft from the head toward the grip in one confident motion. Our free illustrated Installation Guide covers every club type in detail. Do not rush. Rushing causes tearing. This is true of many things in life.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Are they reusable? <span class="arr">▶</span>
+      </div>
+      <div class="faq-a">Technically yes. We don't recommend it. For peak performance and basic dignity, single-use per round is strongly advised. At $20.95 for 24, you can absolutely afford a fresh one every time. Treat yourself. You're worth it. Your clubs are worth it.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Can I use Club Condoms in the rain? <span class="arr">▶</span>
+      </div>
+      <div class="faq-a">Absolutely. Our Vibration-Damping Polymer is fully moisture-resistant. Wet conditions are actually where Club Condoms perform best — the material maintains grip and form even when everything else on the course is getting slippery. You stay in total control.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        What exactly makes the Putter Poncho different? <span class="arr">▶</span>
+      </div>
+      <div class="faq-a">The Putter Poncho provides full-length coverage — shaft AND head — in one continuous piece. Unlike a standard cover that just sits on top, the Poncho goes all the way down. It's softer, thinner, and offers a more intimate level of protection. Putter people understand. You'll understand once you try it.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Is this a real product? <span class="arr">▶</span>
+      </div>
+      <div class="faq-a">Club Condoms™ are genuine, physical golf club head protectors sold as novelty and gag gifts. They are 100% functional and safe for your clubs. They are also the greatest thing to ever happen to a bachelor party, a Secret Santa, or a slow Tuesday on the back nine. Yes. They are real. Yes. You should absolutely buy them.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-brand">🏌️ Club Condoms™</div>
+    <div class="footer-tag">
+      Protection for Your Sticks.<br/>
+      The ultimate gag gift for the golfer who has everything — 
+      except adequate shaft coverage and a solid conversation starter.
+    </div>
+    <div class="social-row">
+      <a class="soc" href="#" title="X/Twitter">𝕏</a>
+      <a class="soc" href="#" title="Facebook">f</a>
+      <a class="soc" href="#" title="Instagram">📷</a>
+      <a class="soc" href="#" title="YouTube">▶</a>
+    </div>
+  </div>
+  <div class="footer-col">
+    <h4>Quick Links</h4>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#products">Our Products</a></li>
+      <li><a href="#sensation">Sensation Chart</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Contact Us</h4>
+    <ul>
+      <li><a href="#">info@club-condoms.com</a></li>
+      <li><a href="#">Wholesale Inquiries</a></li>
+      <li><a href="#">Press & Media</a></li>
+      <li><a href="#">Return Policy</a></li>
+      <li><a href="#">Installation Support</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  CLUB-CONDOMS.COM © 2024 &nbsp;|&nbsp; All Rights Reserved &nbsp;|&nbsp;
+  Club Condoms™ are golf club head covers sold as novelty / gag gifts. For club protection purposes only.
+  Always practice safe strokes. Results may vary.
+</div>
+
+<script>
+function toggleFaq(el){
+  const item=el.parentElement;
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)item.classList.add('open');
+}
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.style.opacity='0';
+      e.target.style.transform='translateY(20px)';
+      requestAnimationFrame(()=>{
+        e.target.style.transition='opacity 0.5s ease,transform 0.5s ease';
+        e.target.style.opacity='1';
+        e.target.style.transform='translateY(0)';
+      });
+      obs.unobserve(e.target);
+    }
+  });
+},{threshold:0.1});
+document.querySelectorAll('.feature-card,.product-card,.review-card').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
